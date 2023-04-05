@@ -18,8 +18,8 @@
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
-
-
+const KEY_LEFT = 37
+const KEY_up = 38
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 /* ********************************************* */
@@ -31,8 +31,13 @@ var spelerY = 600; // y-positie van speler
  */
 var beweegAlles = function() {
   // speler
-
-  // vijand
+ if(keyIsDown(KEY_LEFT)) {
+  spelerX = spelerX -1;  
+ }
+   if(keyIsDown(KEY_up)){
+ spelerX = spelerX 1;
+}
+   // vijand
 
   // kogel
 };
@@ -56,7 +61,7 @@ var verwerkBotsing = function() {
  */
 var tekenAlles = function() {
   // achtergrond
- fill('blue');
+ fill('black');
   rect(0, 0, 1280, 720);
   fill('white');
   rect(550, 310, 200, 50);
