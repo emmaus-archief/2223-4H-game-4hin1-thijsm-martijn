@@ -22,8 +22,12 @@ const KEY_LEFT = 37;
 const KEY_RIGHT = 39;
 const KEY_UP    = 38;
 const KEY_DOWN = 40;
+
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
+
+var vijandX = 600;
+var vijandY = 500; 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -43,9 +47,9 @@ var beweegAlles = function() {
   spelerY = spelerY -1;
 }
 if(keyIsDown(KEY_DOWN)){
-  spelerY = spelerY 1;
+  spelerY = spelerY +1;
 }
-  
+ 
   // vijand
 
   // kogel
@@ -79,6 +83,10 @@ var tekenAlles = function() {
   fill('white');
   rect(1000, 310, 200, 50);
   // vijand
+  fill("red");
+  rect(vijandX - 25, vijandY - 25, 50, 50);
+  fill("black");
+  ellipse(vijandX, vijandY, 10, 10);
 
   // kogel
 
