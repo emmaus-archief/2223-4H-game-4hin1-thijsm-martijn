@@ -28,6 +28,8 @@ var spelerY = 600; // y-positie van speler
 
 var vijandX = 600;
 var vijandY = 500; 
+
+var img; // plaatje
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -87,15 +89,11 @@ var tekenAlles = function() {
   rect(vijandX - 25, vijandY - 25, 50, 50);
   fill("black");
   ellipse(vijandX, vijandY, 10, 10);
-
+  
   // kogel
 
   // speler
-  fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
-
+  image(img, spelerX-25, spelerY-25, 50, 50); 
   // punten en health
 
 };
@@ -112,7 +110,9 @@ var checkGameOver = function() {
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
-
+function preload() {
+  img = loadImage('pacman3.png');
+}
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
