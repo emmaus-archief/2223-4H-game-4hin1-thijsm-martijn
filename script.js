@@ -30,6 +30,7 @@ var vijandX = 600;
 var vijandY = 500; 
 
 var img; // plaatje
+var img2 // plaatje 2
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -76,7 +77,7 @@ var verwerkBotsing = function() {
  */
 var tekenAlles = function() {
   // achtergrond
- fill('black');
+ fill('blue');
   rect(0, 0, 1280, 720);
   fill('white');
   rect(550, 310, 200, 50);
@@ -85,11 +86,7 @@ var tekenAlles = function() {
   fill('white');
   rect(1000, 310, 200, 50);
   // vijand
-  fill("red");
-  rect(vijandX - 25, vijandY - 25, 50, 50);
-  fill("black");
-  ellipse(vijandX, vijandY, 10, 10);
-  
+    image(img2, vijandX-25, vijandY-25, 60, 50); 
   // kogel
 
   // speler
@@ -112,6 +109,7 @@ var checkGameOver = function() {
 /* ********************************************* */
 function preload() {
   img = loadImage('pacman3.png');
+ img2 = loadImage('geest2.png');
 }
 /**
  * setup
