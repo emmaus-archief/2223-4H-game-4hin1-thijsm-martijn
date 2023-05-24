@@ -12,6 +12,7 @@
 ///<reference path="p5.global-mode.d.ts" />
 "use strict"
 
+
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
