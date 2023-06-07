@@ -1,5 +1,5 @@
 /* Game opdracht
-           mn                                                         c  Informatica - Emmauscollege Rotterdam
+   Informatica - Emmauscollege Rotterdam
    Template voor een game in JavaScript met de p5 library
 
    Begin met dit template voor je game opdracht,
@@ -11,7 +11,6 @@
  */
 ///<reference path="p5.global-mode.d.ts" />
 "use strict"
-
 
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
@@ -29,9 +28,6 @@ var spelerY = 600; // y-positie van speler
 
 var vijandX = 600;
 var vijandY = 500; 
-
-var img; // plaatje
-var img2 // plaatje 2
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -42,16 +38,16 @@ var img2 // plaatje 2
 var beweegAlles = function() {
   // speler
  if(keyIsDown(KEY_LEFT)) {
-  spelerX = spelerX -1;  
+  spelerX = spelerX -2;  
  }
    if(keyIsDown(KEY_RIGHT)){
- spelerX = spelerX +1;
+ spelerX = spelerX +2;
 }
   if(keyIsDown(KEY_UP)){
-  spelerY = spelerY -1;
+  spelerY = spelerY -2;
 }
 if(keyIsDown(KEY_DOWN)){
-  spelerY = spelerY +1;
+  spelerY = spelerY +2;
 }
  
   // vijand
@@ -66,7 +62,12 @@ if(keyIsDown(KEY_DOWN)){
  */
 var verwerkBotsing = function() {
   // botsing speler tegen vijand
-
+if (spelerX - vijandX <50 &&
+    spelerX - vijandX >-50 &&
+  spelerY - vijandY <50 &&
+spelerY - vijandY >-50){
+    console.log("Botsing");
+}
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -78,7 +79,8 @@ var verwerkBotsing = function() {
  */
 var tekenAlles = function() {
   // achtergrond
- fill('blue');
+
+ fill('black');
   rect(0, 0, 1280, 720);
   fill('white');
   rect(550, 310, 200, 50);
@@ -87,11 +89,19 @@ var tekenAlles = function() {
   fill('white');
   rect(1000, 310, 200, 50);
   // vijand
-    image(img2, vijandX-25, vijandY-25, 60, 50); 
+  fill("red");
+  rect(vijandX - 25, vijandY - 25, 50, 50);
+  fill("black");
+  ellipse(vijandX, vijandY, 10, 10);
+
   // kogel
 
   // speler
-  image(img, spelerX-25, spelerY-25, 50, 50); 
+  fill("white");
+  rect(spelerX - 25, spelerY - 25, 50, 50);
+  fill("black");
+  ellipse(spelerX, spelerY, 10, 10);
+
   // punten en health
 
 };
@@ -108,10 +118,7 @@ var checkGameOver = function() {
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
-function preload() {
-  img = loadImage('pacman3.png');
- img2 = loadImage('geest2.png');
-}
+
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
@@ -126,7 +133,7 @@ function setup() {
 }
 
 /**
- * draw
+ * draww
  * de code in deze functie wordt 50 keer per seconde
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
@@ -143,6 +150,4 @@ function draw() {
     // teken game-over scherm
 
   }
-}
-................
-          
+} 
