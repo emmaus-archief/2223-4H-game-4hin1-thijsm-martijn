@@ -133,7 +133,7 @@ function setup() {
 }
 
 /**
- * draww
+ * draw
  * de code in deze functie wordt 50 keer per seconde
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
@@ -150,4 +150,4 @@ function draw() {
     // teken game-over scherm
 
   }
-} 
+}
