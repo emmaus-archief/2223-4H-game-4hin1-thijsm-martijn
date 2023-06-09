@@ -1,5 +1,5 @@
 /* Game opdracht
-   Informatica - Emmauscollege Rotterdam
+           mn                                                         c  Informatica - Emmauscollege Rotterdam
    Template voor een game in JavaScript met de p5 library
 
    Begin met dit template voor je game opdracht,
@@ -11,6 +11,7 @@
  */
 ///<reference path="p5.global-mode.d.ts" />
 "use strict"
+
 
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
@@ -28,6 +29,9 @@ var spelerY = 600; // y-positie van speler
 
 var vijandX = 600;
 var vijandY = 500; 
+
+var img; // plaatje
+var img2 // plaatje 2
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -38,16 +42,16 @@ var vijandY = 500;
 var beweegAlles = function() {
   // speler
  if(keyIsDown(KEY_LEFT)) {
-  spelerX = spelerX -2;  
+  spelerX = spelerX -1;  
  }
    if(keyIsDown(KEY_RIGHT)){
- spelerX = spelerX +2;
+ spelerX = spelerX +1;
 }
   if(keyIsDown(KEY_UP)){
-  spelerY = spelerY -2;
+  spelerY = spelerY -1;
 }
 if(keyIsDown(KEY_DOWN)){
-  spelerY = spelerY +2;
+  spelerY = spelerY +1;
 }
  
   // vijand
@@ -79,8 +83,7 @@ spelerY - vijandY >-50){
  */
 var tekenAlles = function() {
   // achtergrond
-
- fill('black');
+ fill('blue');
   rect(0, 0, 1280, 720);
   fill('white');
   rect(550, 310, 200, 50);
@@ -89,19 +92,11 @@ var tekenAlles = function() {
   fill('white');
   rect(1000, 310, 200, 50);
   // vijand
-  fill("red");
-  rect(vijandX - 25, vijandY - 25, 50, 50);
-  fill("black");
-  ellipse(vijandX, vijandY, 10, 10);
-
+    image(img2, vijandX-25, vijandY-25, 60, 50); 
   // kogel
 
   // speler
-  fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
-
+  image(img, spelerX-25, spelerY-25, 50, 50); 
   // punten en health
 
 };
@@ -118,7 +113,10 @@ var checkGameOver = function() {
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
-
+function preload() {
+  img = loadImage('pacman3.png');
+ img2 = loadImage('geest2.png');
+}
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
