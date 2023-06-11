@@ -188,7 +188,9 @@ var tekenAlles = function() {
   rect(100, 310, 200, 50);
   fill('white');
   rect(1000, 310, 200, 50);
-  // vijand
+ 
+  image(img3, 0, 0);
+   // vijand
   image(img2, vijandX1-60, vijandY1-40, 100, 100);
   image(img2, vijandX2-60, vijandY2-40, 100, 100);
   image(img2, vijandX3-60, vijandY3-40, 100, 100);
