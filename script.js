@@ -1,6 +1,6 @@
 /* Game opdracht
-           mn                                                         c  Informatica - Emmauscollege Rotterdam
-   Template voor een game in JavaScript met de p5 library
+   Template voor een game in JavaScript met de p5 
+   library
 
    Begin met dit template voor je game opdracht,
    voeg er je eigen code aan toe.
@@ -208,7 +208,48 @@ var tekenAlles = function() {
  * anders return false
  */
 var checkGameOver = function() {
-  // check of HP 0 is , of tijd op is, of ...
+if (spelerX - vijandX1 <50 &&
+      spelerX - vijandX1 >-50 &&
+      spelerY - vijandY1 <50 &&
+      spelerY - vijandY1 >-50) {
+      console.log("Botsing");  
+    return true;
+  }
+  if (spelerX - vijandX2 <50 &&
+      spelerX - vijandX2 >-50 &&
+      spelerY - vijandY2 <50 &&
+      spelerY - vijandY2 >-50) {
+      console.log("Botsing");  
+    return true;
+  }
+  if (spelerX - vijandX3 <50 &&
+      spelerX - vijandX3 >-50 &&
+      spelerY - vijandY3 <50 &&
+      spelerY - vijandY3 >-50) {
+      console.log("Botsing");  
+    return true;
+  }
+  if (spelerX - vijandX4 <50 &&
+      spelerX - vijandX4 >-50 &&
+      spelerY - vijandY4 <50 &&
+      spelerY - vijandY4 >-50) {
+      console.log("Botsing");  
+    return true;
+  }
+  if (spelerX - vijandX5 <50 &&
+      spelerX - vijandX5 >-50 &&
+      spelerY - vijandY5 <50 &&
+      spelerY - vijandY5 >-50) {
+      console.log("Botsing");  
+    return true;
+  }
+  if (spelerX - vijandX6 <50 &&
+      spelerX - vijandX6 >-50 &&
+      spelerY - vijandY6 <50 &&
+      spelerY - vijandY6 >-50) {
+      console.log("Botsing");  
+    return true;
+  }
   return false;
 };
 
@@ -216,8 +257,9 @@ var checkGameOver = function() {
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
 function preload() {
-  img = loadImage('pacman3.png');
- img2 = loadImage('geest2.png');
+img =  loadImage('pacman3.png');
+img2 = loadImage('geest2.png');
+img3 = loadImage('achtergrond.jpg')
 }
 /**
  * setup
@@ -245,9 +287,33 @@ function draw() {
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
+    console.log("spelen");
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-
-  }
+console.log("game over");
+  textSize(50);
+  fill("white");
+      text("GAMEOVER! Klik op spatie om opnieuw te beginnen.", 100, 250);
+if (KeyIsDown(32)) {
+  spelerX = 400;
+  vijandX1 = 1280;
+  vijandX2 = 1280;
+  vijandX3 = 1280;
+  vijandX4 = 1280;
+  vijandX5 = 1280;
+  vijandX6 = 1280;
+  vijandY1 = random(100,700);
+  vijandY2 = random(100,700);
+  vijandY3 = random(100,700);
+  vijandY4 = random(100,700);
+  vijandY5 = random(100,700);
+  vijandY6 = random(100,700);
+  spelStatus = SPELEN;
+ }
+}
+if (spelStatus === UITLEG) {
+  // teken uitleg game-over
+  console.log("UITLEG");
+}
 }
