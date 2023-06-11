@@ -292,9 +292,9 @@ function draw() {
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
 console.log("game over");
- textSize(50);
+ textSize(40);
 fill("white");
-    text("gecrashed, druk op spatie om opnieuw te proberen", 100, 250);
+    text("GAMEOVER! KLIK OP SPATIE OM OPNIEUW TE BEGINNEN", 70, 200);
    if (keyIsDown(32)) {
      spelerX = 400;
      vijandX1 = 1280;
