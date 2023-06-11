@@ -18,20 +18,37 @@
 /* ********************************************* */
 const SPELEN = 1;
 const GAMEOVER = 2;
+const UITLEG = 8;
 var spelStatus = SPELEN;
 const KEY_LEFT = 37;
 const KEY_RIGHT = 39;
-const KEY_UP    = 38;
+const KEY_UP   = 38;
 const KEY_DOWN = 40;
 
-var spelerX = 600; // x-positie van speler
-var spelerY = 600; // y-positie van speler
+var spelerX = 640; // x-positie van speler
+var spelerY = 360; // y-positie van speler
 
-var vijandX = 600;
-var vijandY = 500; 
+var vijandX1 = 600;
+var vijandY1 = 500; 
 
-var img; // plaatje
-var img2 // plaatje 2
+var vijandX2 = 1000;
+var vijandY2 = 900;
+
+var vijandX3 = 1000;
+var vijandY3 = 900;
+
+var vijandX4 = 1000;
+var vijandY4 = 900;
+
+var vijandX5 = 1000;
+var vijandY5 = 900;
+
+var vijandX6 = 1000;
+var vijandY6 = 900;
+
+let img;  // plaatje
+let img2; // plaatje 2
+let img3; // plaatje 3
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -42,20 +59,59 @@ var img2 // plaatje 2
 var beweegAlles = function() {
   // speler
  if(keyIsDown(KEY_LEFT)) {
-  spelerX = spelerX -1;  
+  spelerX = spelerX -5;  
  }
-   if(keyIsDown(KEY_RIGHT)){
- spelerX = spelerX +1;
+ 
+  if(keyIsDown(KEY_RIGHT)){
+ spelerX = spelerX +5;
 }
+ 
   if(keyIsDown(KEY_UP)){
-  spelerY = spelerY -1;
+  spelerY = spelerY -5;
 }
-if(keyIsDown(KEY_DOWN)){
-  spelerY = spelerY +1;
+ 
+  if(keyIsDown(KEY_DOWN)){
+  spelerY = spelerY +5;
 }
  
   // vijand
+vijandX1 = vijandY1 - 5;
+if (vijandX1 && vijandX1 <0) {
+    vijandX1 = 1280
+    vijandY1 = random(100,700);
+}
 
+vijandX2 = vijandY2 - 7;
+if (vijandX2 && vijandX2 <0) {
+    vijandX2 = 1280
+    vijandY2 = random(100,700);
+}
+
+vijandX3 = vijandY3 - 10;
+if (vijandX3 && vijandX3 <0) {
+    vijandX3 = 1280
+    vijandY3 = random(100,700);
+}
+
+vijandX4 = vijandY4 - 12;
+if (vijandX4 && vijandX4 <0) {
+    vijandX4 = 1280
+    vijandY4 = random(100,700);
+}
+
+vijandX5 = vijandY5 - 9;
+if (vijandX5 && vijandX5 <0) {
+    vijandX5 = 1280
+    vijandY5 = random(100,700);
+}
+
+vijandX6 = vijandY6 - 8;
+if (vijandX6 && vijandX6 <0) {
+    vijandX6 = 1280
+    vijandX6 = random(100,700);
+}
+
+  
   // kogel
 };
 
@@ -66,13 +122,54 @@ if(keyIsDown(KEY_DOWN)){
  */
 var verwerkBotsing = function() {
   // botsing speler tegen vijand
-if (spelerX - vijandX <50 &&
-    spelerX - vijandX >-50 &&
-  spelerY - vijandY <50 &&
-spelerY - vijandY >-50){
-    console.log("Botsing");
-}
-  // botsing kogel tegen vijand
+if (spelerX - vijandX1 <50 &&
+    spelerX - vijandX1 >-50 &&
+    spelerY - vijandY1 <50 &&
+    spelerY - vijandY1 >-50) {
+    console.log("botsing");
+    }
+
+
+if (spelerX - vijandX2 <50 &&
+    spelerX - vijandX2 >-50 &&
+    spelerY - vijandY2 <50 &&
+    spelerY - vijandY2 >-50) {
+    console.log("botsing");
+    }
+
+
+if (spelerX - vijandX3 <50 &&
+    spelerX - vijandX3 >-50 &&
+    spelerY - vijandY3 <50 &&
+    spelerY - vijandY3 >-50) {
+    console.log("botsing");
+    }
+
+
+if (spelerX - vijandX4 <50 &&
+    spelerX - vijandX4 >-50 &&
+    spelerY - vijandY4 <50 &&
+    spelerY - vijandY4 >-50) {
+    console.log("botsing");
+    }
+
+
+if (spelerX - vijandX5 <50 &&
+    spelerX - vijandX5 >-50 &&
+    spelerY - vijandY5 <50 &&
+    spelerY - vijandY5 >-50) {
+    console.log("botsing");
+    }
+
+
+if (spelerX - vijandX6 <50 &&
+    spelerX - vijandX6 >-50 &&
+    spelerY - vijandY6 <50 &&
+    spelerY - vijandY6 >-50) {
+    console.log("botsing");
+    }
+   
+   // botsing kogel tegen vijand
 
   // update punten en health
 
@@ -92,11 +189,16 @@ var tekenAlles = function() {
   fill('white');
   rect(1000, 310, 200, 50);
   // vijand
-    image(img2, vijandX-25, vijandY-25, 60, 50); 
+  image(img2, vijandX1-60, vijandY1-40, 100, 100);
+  image(img2, vijandX2-60, vijandY2-40, 100, 100);
+  image(img2, vijandX3-60, vijandY3-40, 100, 100);
+  image(img2, vijandX4-60, vijandY4-40, 100, 100);
+  image(img2, vijandX5-60, vijandY5-40, 100, 100);
+  image(img2, vijandX6-60, vijandY6-40, 100, 100); 
   // kogel
 
   // speler
-  image(img, spelerX-25, spelerY-25, 50, 50); 
+  image(img, spelerX-60, spelerY-40, 100, 100); 
   // punten en health
 
 };
