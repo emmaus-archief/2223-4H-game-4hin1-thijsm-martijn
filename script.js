@@ -75,41 +75,41 @@ var beweegAlles = function() {
 }
  
   // vijand
-vijandX1 = vijandY1 - 5;
-if (vijandX1 && vijandX1 <0) {
+vijandX1 = vijandX1 - 5;
+if (vijandX1 && vijandX1 <0) { 
     vijandX1 = 1280
     vijandY1 = random(100,700);
-}
+  }
 
-vijandX2 = vijandY2 - 7;
-if (vijandX2 && vijandX2 <0) {
+  vijandX2 = vijandX2 - 7;
+if (vijandX2 && vijandX2 <0) { 
     vijandX2 = 1280
     vijandY2 = random(100,700);
-}
+  }
 
-vijandX3 = vijandY3 - 10;
-if (vijandX3 && vijandX3 <0) {
+   vijandX3 = vijandX3 - 10;
+if (vijandX3 && vijandX3 <0) { 
     vijandX3 = 1280
     vijandY3 = random(100,700);
-}
+  }
 
-vijandX4 = vijandY4 - 12;
-if (vijandX4 && vijandX4 <0) {
+   vijandX4 = vijandX4 - 12;
+if (vijandX4 && vijandX4 <0) { 
     vijandX4 = 1280
     vijandY4 = random(100,700);
-}
+  }
 
-vijandX5 = vijandY5 - 9;
-if (vijandX5 && vijandX5 <0) {
+   vijandX5 = vijandX5 - 9;
+if (vijandX5 && vijandX5 <0) { 
     vijandX5 = 1280
     vijandY5 = random(100,700);
-}
+  }
 
-vijandX6 = vijandY6 - 8;
-if (vijandX6 && vijandX6 <0) {
+  vijandX6 = vijandX6 -8;
+if (vijandX6 && vijandX6 <0) { 
     vijandX6 = 1280
-    vijandX6 = random(100,700);
-}
+    vijandY6 = random(100,700);
+  }
 
   
   // kogel
@@ -292,28 +292,33 @@ function draw() {
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
 console.log("game over");
-  textSize(50);
-  fill("white");
-      text("GAMEOVER! Klik op spatie om opnieuw te beginnen.", 100, 250);
-if (KeyIsDown(32)) {
-  spelerX = 400;
-  vijandX1 = 1280;
-  vijandX2 = 1280;
-  vijandX3 = 1280;
-  vijandX4 = 1280;
-  vijandX5 = 1280;
-  vijandX6 = 1280;
-  vijandY1 = random(100,700);
-  vijandY2 = random(100,700);
-  vijandY3 = random(100,700);
-  vijandY4 = random(100,700);
-  vijandY5 = random(100,700);
-  vijandY6 = random(100,700);
-  spelStatus = SPELEN;
- }
-}
-if (spelStatus === UITLEG) {
+ textSize(50);
+fill("white");
+    text("gecrashed, druk op spatie om opnieuw te proberen", 100, 250);
+   if (keyIsDown(32)) {
+     spelerX = 400;
+     vijandX1 = 1280;
+     vijandX2 = 1280;
+     vijandX3 = 1280;
+     vijandX4 = 1280;
+     vijandX5 = 1280;
+     vijandX6 = 1280;
+     vijandY1 = random(100,700);
+     vijandY2 = random(100,700);
+     vijandY3 = random(100,700);
+     vijandY4 = random(100,700);
+     vijandY5 = random(100,700);
+     vijandY6 = random(100,700);
+     spelStatus = SPELEN;
+   }
+  }
+if (spelStatus === UITLEG) {
   // teken uitleg game-over
-  console.log("UITLEG");
+console.log("UITLEG");
+
+
 }
+  
+
 }
+  
