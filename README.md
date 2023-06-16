@@ -18,3 +18,8 @@ https://emmauscollege.github.io/informatica/game/
 - icon <br>
         http://www.iconarchive.com/show/android-lollipop-icons-by-dtafalonso/Play-Games-icon.html
 - ...
+opdracht:
+zorg ervoor dat ik niet na 1 keer al dood ben.
+- maak een 2e uitleg scherm,
+- zet het bericht erin: als je op s drukt dan start het spel
+- het tweede uitlegscherm komt na het eerst en voor spelen

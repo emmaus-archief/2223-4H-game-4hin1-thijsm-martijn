@@ -19,17 +19,17 @@
 const SPELEN = 1;
 const GAMEOVER = 2;
 const UITLEG = 8;
-var spelStatus = SPELEN;
+var spelStatus = UITLEG;
 const KEY_LEFT = 37;
 const KEY_RIGHT = 39;
-const KEY_UP   = 38;
+const KEY_UP = 38;
 const KEY_DOWN = 40;
 
 var spelerX = 640; // x-positie van speler
 var spelerY = 360; // y-positie van speler
 
 var vijandX1 = 600;
-var vijandY1 = 500; 
+var vijandY1 = 500;
 
 var vijandX2 = 1000;
 var vijandY2 = 900;
@@ -58,60 +58,60 @@ let img3; // plaatje 3
  */
 var beweegAlles = function() {
   // speler
- if(keyIsDown(KEY_LEFT)) {
-  spelerX = spelerX -5;  
- }
- 
-  if(keyIsDown(KEY_RIGHT)){
- spelerX = spelerX +5;
-}
- 
-  if(keyIsDown(KEY_UP)){
-  spelerY = spelerY -5;
-}
- 
-  if(keyIsDown(KEY_DOWN)){
-  spelerY = spelerY +5;
-}
- 
+  if (keyIsDown(KEY_LEFT)) {
+    spelerX = spelerX - 5;
+  }
+
+  if (keyIsDown(KEY_RIGHT)) {
+    spelerX = spelerX + 5;
+  }
+
+  if (keyIsDown(KEY_UP)) {
+    spelerY = spelerY - 5;
+  }
+
+  if (keyIsDown(KEY_DOWN)) {
+    spelerY = spelerY + 5;
+  }
+
   // vijand
-vijandX1 = vijandX1 - 5;
-if (vijandX1 && vijandX1 <0) { 
+  vijandX1 = vijandX1 - 5;
+  if (vijandX1 && vijandX1 < 0) {
     vijandX1 = 1280
-    vijandY1 = random(100,700);
+    vijandY1 = random(100, 700);
   }
 
   vijandX2 = vijandX2 - 7;
-if (vijandX2 && vijandX2 <0) { 
+  if (vijandX2 && vijandX2 < 0) {
     vijandX2 = 1280
-    vijandY2 = random(100,700);
+    vijandY2 = random(100, 700);
   }
 
-   vijandX3 = vijandX3 - 10;
-if (vijandX3 && vijandX3 <0) { 
+  vijandX3 = vijandX3 - 10;
+  if (vijandX3 && vijandX3 < 0) {
     vijandX3 = 1280
-    vijandY3 = random(100,700);
+    vijandY3 = random(100, 700);
   }
 
-   vijandX4 = vijandX4 - 12;
-if (vijandX4 && vijandX4 <0) { 
+  vijandX4 = vijandX4 - 12;
+  if (vijandX4 && vijandX4 < 0) {
     vijandX4 = 1280
-    vijandY4 = random(100,700);
+    vijandY4 = random(100, 700);
   }
 
-   vijandX5 = vijandX5 - 9;
-if (vijandX5 && vijandX5 <0) { 
+  vijandX5 = vijandX5 - 9;
+  if (vijandX5 && vijandX5 < 0) {
     vijandX5 = 1280
-    vijandY5 = random(100,700);
+    vijandY5 = random(100, 700);
   }
 
-  vijandX6 = vijandX6 -8;
-if (vijandX6 && vijandX6 <0) { 
+  vijandX6 = vijandX6 - 8;
+  if (vijandX6 && vijandX6 < 0) {
     vijandX6 = 1280
-    vijandY6 = random(100,700);
+    vijandY6 = random(100, 700);
   }
 
-  
+
   // kogel
 };
 
@@ -122,54 +122,54 @@ if (vijandX6 && vijandX6 <0) {
  */
 var verwerkBotsing = function() {
   // botsing speler tegen vijand
-if (spelerX - vijandX1 <50 &&
-    spelerX - vijandX1 >-50 &&
-    spelerY - vijandY1 <50 &&
-    spelerY - vijandY1 >-50) {
+  if (spelerX - vijandX1 < 50 &&
+    spelerX - vijandX1 > -50 &&
+    spelerY - vijandY1 < 50 &&
+    spelerY - vijandY1 > -50) {
     console.log("botsing");
-    }
+  }
 
 
-if (spelerX - vijandX2 <50 &&
-    spelerX - vijandX2 >-50 &&
-    spelerY - vijandY2 <50 &&
-    spelerY - vijandY2 >-50) {
+  if (spelerX - vijandX2 < 50 &&
+    spelerX - vijandX2 > -50 &&
+    spelerY - vijandY2 < 50 &&
+    spelerY - vijandY2 > -50) {
     console.log("botsing");
-    }
+  }
 
 
-if (spelerX - vijandX3 <50 &&
-    spelerX - vijandX3 >-50 &&
-    spelerY - vijandY3 <50 &&
-    spelerY - vijandY3 >-50) {
+  if (spelerX - vijandX3 < 50 &&
+    spelerX - vijandX3 > -50 &&
+    spelerY - vijandY3 < 50 &&
+    spelerY - vijandY3 > -50) {
     console.log("botsing");
-    }
+  }
 
 
-if (spelerX - vijandX4 <50 &&
-    spelerX - vijandX4 >-50 &&
-    spelerY - vijandY4 <50 &&
-    spelerY - vijandY4 >-50) {
+  if (spelerX - vijandX4 < 50 &&
+    spelerX - vijandX4 > -50 &&
+    spelerY - vijandY4 < 50 &&
+    spelerY - vijandY4 > -50) {
     console.log("botsing");
-    }
+  }
 
 
-if (spelerX - vijandX5 <50 &&
-    spelerX - vijandX5 >-50 &&
-    spelerY - vijandY5 <50 &&
-    spelerY - vijandY5 >-50) {
+  if (spelerX - vijandX5 < 50 &&
+    spelerX - vijandX5 > -50 &&
+    spelerY - vijandY5 < 50 &&
+    spelerY - vijandY5 > -50) {
     console.log("botsing");
-    }
+  }
 
 
-if (spelerX - vijandX6 <50 &&
-    spelerX - vijandX6 >-50 &&
-    spelerY - vijandY6 <50 &&
-    spelerY - vijandY6 >-50) {
+  if (spelerX - vijandX6 < 50 &&
+    spelerX - vijandX6 > -50 &&
+    spelerY - vijandY6 < 50 &&
+    spelerY - vijandY6 > -50) {
     console.log("botsing");
-    }
-   
-   // botsing kogel tegen vijand
+  }
+
+  // botsing kogel tegen vijand
 
   // update punten en health
 
@@ -180,7 +180,7 @@ if (spelerX - vijandX6 <50 &&
  */
 var tekenAlles = function() {
   // achtergrond
- fill('blue');
+  fill('blue');
   rect(0, 0, 1280, 720);
   fill('white');
   rect(550, 310, 200, 50);
@@ -188,19 +188,19 @@ var tekenAlles = function() {
   rect(100, 310, 200, 50);
   fill('white');
   rect(1000, 310, 200, 50);
- 
+
   image(img3, 0, 0);
-   // vijand
-  image(img2, vijandX1-60, vijandY1-40, 100, 100);
-  image(img2, vijandX2-60, vijandY2-40, 100, 100);
-  image(img2, vijandX3-60, vijandY3-40, 100, 100);
-  image(img2, vijandX4-60, vijandY4-40, 100, 100);
-  image(img2, vijandX5-60, vijandY5-40, 100, 100);
-  image(img2, vijandX6-60, vijandY6-40, 100, 100); 
+  // vijand
+  image(img2, vijandX1 - 60, vijandY1 - 40, 100, 100);
+  image(img2, vijandX2 - 60, vijandY2 - 40, 100, 100);
+  image(img2, vijandX3 - 60, vijandY3 - 40, 100, 100);
+  image(img2, vijandX4 - 60, vijandY4 - 40, 100, 100);
+  image(img2, vijandX5 - 60, vijandY5 - 40, 100, 100);
+  image(img2, vijandX6 - 60, vijandY6 - 40, 100, 100);
   // kogel
 
   // speler
-  image(img, spelerX-60, spelerY-40, 100, 100); 
+  image(img, spelerX - 60, spelerY - 40, 100, 100);
   // punten en health
 
 };
@@ -210,46 +210,46 @@ var tekenAlles = function() {
  * anders return false
  */
 var checkGameOver = function() {
-if (spelerX - vijandX1 <50 &&
-      spelerX - vijandX1 >-50 &&
-      spelerY - vijandY1 <50 &&
-      spelerY - vijandY1 >-50) {
-      console.log("Botsing");  
+  if (spelerX - vijandX1 < 50 &&
+    spelerX - vijandX1 > -50 &&
+    spelerY - vijandY1 < 50 &&
+    spelerY - vijandY1 > -50) {
+    console.log("Botsing");
     return true;
   }
-  if (spelerX - vijandX2 <50 &&
-      spelerX - vijandX2 >-50 &&
-      spelerY - vijandY2 <50 &&
-      spelerY - vijandY2 >-50) {
-      console.log("Botsing");  
+  if (spelerX - vijandX2 < 50 &&
+    spelerX - vijandX2 > -50 &&
+    spelerY - vijandY2 < 50 &&
+    spelerY - vijandY2 > -50) {
+    console.log("Botsing");
     return true;
   }
-  if (spelerX - vijandX3 <50 &&
-      spelerX - vijandX3 >-50 &&
-      spelerY - vijandY3 <50 &&
-      spelerY - vijandY3 >-50) {
-      console.log("Botsing");  
+  if (spelerX - vijandX3 < 50 &&
+    spelerX - vijandX3 > -50 &&
+    spelerY - vijandY3 < 50 &&
+    spelerY - vijandY3 > -50) {
+    console.log("Botsing");
     return true;
   }
-  if (spelerX - vijandX4 <50 &&
-      spelerX - vijandX4 >-50 &&
-      spelerY - vijandY4 <50 &&
-      spelerY - vijandY4 >-50) {
-      console.log("Botsing");  
+  if (spelerX - vijandX4 < 50 &&
+    spelerX - vijandX4 > -50 &&
+    spelerY - vijandY4 < 50 &&
+    spelerY - vijandY4 > -50) {
+    console.log("Botsing");
     return true;
   }
-  if (spelerX - vijandX5 <50 &&
-      spelerX - vijandX5 >-50 &&
-      spelerY - vijandY5 <50 &&
-      spelerY - vijandY5 >-50) {
-      console.log("Botsing");  
+  if (spelerX - vijandX5 < 50 &&
+    spelerX - vijandX5 > -50 &&
+    spelerY - vijandY5 < 50 &&
+    spelerY - vijandY5 > -50) {
+    console.log("Botsing");
     return true;
   }
-  if (spelerX - vijandX6 <50 &&
-      spelerX - vijandX6 >-50 &&
-      spelerY - vijandY6 <50 &&
-      spelerY - vijandY6 >-50) {
-      console.log("Botsing");  
+  if (spelerX - vijandX6 < 50 &&
+    spelerX - vijandX6 > -50 &&
+    spelerY - vijandY6 < 50 &&
+    spelerY - vijandY6 > -50) {
+    console.log("Botsing");
     return true;
   }
   return false;
@@ -259,9 +259,9 @@ if (spelerX - vijandX1 <50 &&
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
 function preload() {
-img =  loadImage('pacman3.png');
-img2 = loadImage('geest2.png');
-img3 = loadImage('achtergrond.jpg')
+  img = loadImage('pacman3.png');
+  img2 = loadImage('geest2.png');
+  img3 = loadImage('achtergrond.jpg')
 }
 /**
  * setup
@@ -293,34 +293,39 @@ function draw() {
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-console.log("game over");
- textSize(40);
-fill("white");
+    console.log("game over");
+    textSize(40);
+    fill("white");
     text("GAMEOVER! KLIK OP SPATIE OM OPNIEUW TE BEGINNEN", 70, 200);
-   if (keyIsDown(32)) {
-     spelerX = 400;
-     vijandX1 = 1280;
-     vijandX2 = 1280;
-     vijandX3 = 1280;
-     vijandX4 = 1280;
-     vijandX5 = 1280;
-     vijandX6 = 1280;
-     vijandY1 = random(100,700);
-     vijandY2 = random(100,700);
-     vijandY3 = random(100,700);
-     vijandY4 = random(100,700);
-     vijandY5 = random(100,700);
-     vijandY6 = random(100,700);
-     spelStatus = SPELEN;
-   }
+    if (keyIsDown(32)) {
+      spelerX = 400;
+      vijandX1 = 1280;
+      vijandX2 = 1280;
+      vijandX3 = 1280;
+      vijandX4 = 1280;
+      vijandX5 = 1280;
+      vijandX6 = 1280;
+      vijandY1 = random(100, 700);
+      vijandY2 = random(100, 700);
+      vijandY3 = random(100, 700);
+      vijandY4 = random(100, 700);
+      vijandY5 = random(100, 700);
+      vijandY6 = random(100, 700);
+      spelStatus = SPELEN;
+    }
   }
-if (spelStatus === UITLEG) {
-  // teken uitleg game-over
-console.log("UITLEG");
+  if (spelStatus === UITLEG) {
+    // teken uitleg game-over
+    console.log("UITLEG");
+    textSize(50);
+    fill("white")
+    rect(0, 0, 1280, 720);
+    text("als je op s drukt dan start het spel")
+    if (keyIsDown(13)) {
+      spelerX = 400;
+      spelStatus = SPELEN;
+    }
 
 
+  }
 }
-  
-
-}
-  
